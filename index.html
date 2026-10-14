@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login-screen" class="screen">
+            <h2>Sistema de Controle de Tarefas</h2>
+            <form id="login-form">
+                <input type="text" id="login-email" placeholder="E-mail" required>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <div id="task-screen" class="screen" style="display: none;">
+            <header>
+                <h2>Minhas Tarefas</h2>
+                <button id="btn-logout">Encerrar Sessão</button>
+            </header>
+
+            <section class="task-controls">
+                <form id="task-form">
+                    <input type="text" id="task-titulo" placeholder="Título da Tarefa (Obrigatório)" required>
+                    <input type="text" id="task-descricao" placeholder="Descrição">
+                    <input type="date" id="task-prazo">
+                    <button type="submit">Adicionar Tarefa</button>
+                </form>
+
+                <div class="filters">
+                    <button onclick="app.filtrarTarefas('TODAS')">Todas</button>
+                    <button onclick="app.filtrarTarefas('PENDENTE')">Pendentes</button>
+                    <button onclick="app.filtrarTarefas('CONCLUIDA')">Concluídas</button>
+                </div>
+            </section>
+
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
